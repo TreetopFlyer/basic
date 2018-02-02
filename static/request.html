@@ -1,0 +1,30 @@
+<script>
+
+function Request(inURL, inVerb, inHeaders, inSuccess)
+{
+    var xhr;
+    xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    xhr.open(inVerb, inURL);
+    xhr.onreadystatechange = function()
+    {
+        if (xhr.readyState>3 && xhr.status==200)
+        {
+            inSuccess(xhr.responseText);
+        }
+    };
+    for(header in inHeaders)
+    {
+        xhr.setRequestHeader(header, inHeaders[header]);
+    }
+    xhr.send();
+    return xhr;
+}
+
+Request(
+    'http://localhost/sql',
+    'GET',
+    {auth:"admin", sql:"SELECT *"},
+    function(inData){console.log(inData);}
+);
+
+</script>

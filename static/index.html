@@ -7,16 +7,90 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="/static/styles.css">
     </head>
-    <body>
+    <body style="padding-top:70px;">
 
         <div ng-app="DatApp" ng-controller="DatAppController" ng-cloak>
-            
+
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="navbar-brand">Brand</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#">Link</a></li>
+                            <li><a href="#">Link</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container">
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            SQL Statement
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">SQL Log</div>
+                        <table class="table table-condensed">
+                            <tr>
+                                <th>
+                                    Timestamp
+                                </th>
+                                <th>
+                                    Statement
+                                </th>
+                                <th>
+                                    Results
+                                </th>
+                                <th>
+                                    Controls
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2346:2309723.23525
+                                </td>
+                                <td>
+                                    SELECT * db
+                                </td>
+                                <td>
+                                    <span class="badge">15</span>
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary btn-xs" type="button">
+                                        Copy to editor
+                                    </button>
+                                    <button class="btn btn-primary btn-xs" type="button">
+                                        Remove from log
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>  
+
         </div>
+
 
         <script>
             var DatApp;
             DatApp = angular.module("DatApp", []);
-            DatApp.controller("DatAppController", ["$scope", function(inScope){
+            DatApp.controller("DatAppController", ["$scope", function($scope)
+            {
 
             }]);
         </script>
